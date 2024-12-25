@@ -54,11 +54,11 @@ if file is not None:
         "Age Distribution",
         "Customer Type vs Satisfaction",
         "Type class vs Satisfaction",
-        "count of Travel Type"
+        "count of Travel Types"
     ])
 
     # Plot for the target(satisfaction)
-    if graph == "Satisaction plot":
+    if graph == "Satisfaction plot":
         st.write("count plot for Satisfaction")
         plt.figure(figsize=(10, 5))
         sns.countplot(x = 'Satisfaction', data = data)
@@ -69,7 +69,7 @@ if file is not None:
         st.pyplot(plt)
 
     # Plot histogram for Age
-    elif graph == "Histogram for Age Distribution":
+    elif graph == "Age Distribution":
         st.write("### Age Distribution")
         plt.figure(figsize=(10, 6))
         sns.histplot(data['Age'], bins=20, kde=True, color='skyblue')
@@ -92,8 +92,8 @@ if file is not None:
         st.pyplot(plt)
 
     # Plot of Relationship Between Travel Class Distribution and Satisfaction Levels
-    elif graph == "Travel Class vs Satisfaction":
-        st.write("### Travel Class vs Satisfaction Levels")
+    elif graph == "Type class vs Satisfaction":
+        st.write("### Type class vs Satisfaction")
         plt.figure(figsize=(8, 6))
         sns.countplot(x='Class', hue='Satisfaction', data=data, palette='coolwarm')
         plt.title("Travel Class vs Satisfaction Levels", fontsize=16)
