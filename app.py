@@ -54,7 +54,7 @@ if file is not None:
         "Age Distribution",
         "Customer Type vs Satisfaction",
         "Type class vs Satisfaction",
-        "count of Travel Types"
+        "Count of Travel Types"
     ])
 
     # Plot for the target(satisfaction)
