@@ -45,7 +45,7 @@ def plot_graph(graph_type, data):
         col = st.selectbox("Select a column for the count plot", data.columns)
         if col:
             plt.figure(figsize=(10, 6))
-            sns.countplot(x=data[col], palette="viridis")
+            sns.countplot(x=data[col], hue=None, palette="viridis", legend=False)
             plt.title(f"Count Plot for {col}", fontsize=16)
             st.pyplot(plt)
             plt.close()
@@ -69,7 +69,7 @@ def plot_graph(graph_type, data):
                 sns.countplot(x=data[x_col], hue=data[hue_col], palette="coolwarm")
                 plt.title(f"Bar Plot: {x_col} vs {hue_col}")
             else:
-                sns.countplot(x=data[x_col], palette="coolwarm")
+                sns.countplot(x=data[x_col], hue=None if hue_col == "None" else hue_col, palette="coolwarm", legend=False)
                 plt.title(f"Bar Plot for {x_col}")
             st.pyplot(plt)
             plt.close()
@@ -248,7 +248,7 @@ def model_training(data):
 # Function to plot accuracy comparison
 def plot_accuracy_comparison(accuracies):
     plt.figure(figsize=(8, 6))
-    sns.barplot(x=list(accuracies.keys()), y=list(accuracies.values()), palette="Set2")
+    sns.barplot(x=list(accuracies.keys()), y=list(accuracies.values()), hue=None, palette="Set2")
     plt.title("Model Accuracy Comparison")
     plt.ylabel("Accuracy")
     st.pyplot(plt)
